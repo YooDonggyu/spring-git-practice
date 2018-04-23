@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<!-- 
+	MyBatis  DataSource에 대한 설정 및  SQL 정의 xml 에 대한 매핑
+	spring과 연동시에는 spring 설정에서 DataSource(dbcp) 를 정의한다. 
+-->
+<configuration>	
+	<!-- 사용할 클래스에 대한 별칭을 명시한다.  -->
+	<typeAliases>
+<!-- 	별칭 방법 1.	
+		<typeAlias type="model.MemberVO" alias="memberVO"/>		
+		<typeAlias type="model.DeptVO" alias="deptVO"/>
+		<typeAlias type="model.EmpVO" alias="empVO"/> 
+-->
+<!-- 별칭 방법 2.
+		<package name="model"/> 팩키지 단위로 선언하면
+		별칭은 소문자로 시작하는 클래스명이 별청이 된다.
+ -->
+		<package name="org.kosta.practice.model"/>
+		
+	</typeAliases>
+	
+<!-- 
+dispatcher-servlet.xml에서 정의했기 때문에 필요없음
+ 	
+<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC"/>
+			<dataSource type="POOLED">
+				<property name="driver" value="oracle.jdbc.driver.OracleDriver"/>	
+				<property name="url" value="jdbc:oracle:thin:@127.0.0.1:1521:XE"/>	
+				<property name="username" value="scott"/>	
+				<property name="password" value="tiger"/>			
+			</dataSource>
+		</environment>		
+	</environments> 
+-->
+	<mappers>
+		<!-- Mapping -->
+	</mappers>
+</configuration>
+
+
+
+
+
+
+
+
+
+

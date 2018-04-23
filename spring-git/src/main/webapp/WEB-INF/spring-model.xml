@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+
+<context:component-scan base-package="org.kosta" />
+
+<!-- Spring과 MyBatis 연동설정 -->
+<!-- DBCP -->
+<bean id="dbcp" class="org.apache.commons.dbcp.BasicDataSource">
+	<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
+	<property name="url" value="jdbc:oracle:thin:@127.0.0.1:1521:xe" />
+	<property name="username" value="scott" />
+	<property name="password" value="tiger" />
+</bean>
+
+<!-- 
+	MyBatis와 Spring 연동 설정
+	1. DBCP할당(위) 
+	2. MyBatis 설정파일 위치를 명시해 mybatis xml을 로딩 
+-->
+<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean" >
+	<property name="dataSource" ref="dbcp" />
+	<property name="configLocation" value="classpath:mybatis/config/SqlSessionConfig.xml" />
+</bean>
+
+<!--
+	Spring에서 MyBatis 연동해 개발시에 중복작업을 최소화시킨다. 
+	(openSession(), commit(), close() 등)
+	
+	아래 SqlSessionTemplate을 사용하면 
+	AutoCommit - true
+	Rollback - auto (AOP 기반 Transaction 적용하면 해당 메서드 실행시 문제 발생하면 자동 롤백 처리) 
+	반드시 factory가 필요!
+ -->
+<bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
+	<constructor-arg ref="sqlSessionFactory" />
+</bean>
+
+
+
+</beans>
