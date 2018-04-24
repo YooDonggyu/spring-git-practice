@@ -1,4 +1,4 @@
-select* from mybatis_member
+select* from customer
 
 select id, password, name, address 
  		from mybatis_member

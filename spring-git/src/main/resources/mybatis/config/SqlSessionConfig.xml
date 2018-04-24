@@ -40,6 +40,7 @@ dispatcher-servlet.xml에서 정의했기 때문에 필요없음
 -->
 	<mappers>
 		<!-- Mapping -->
+		<mapper resource="mybatis/config/customer.xml" />
 	</mappers>
 </configuration>
 
