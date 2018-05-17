@@ -14,14 +14,16 @@ public class MemberController {
 	
 	@Autowired
 	private CustomerService service;
-	
+	//
 	@RequestMapping("login.do")
 	public String login(CustomerVO vo, HttpServletRequest request, Model model) {
 		CustomerVO rvo = service.login(vo);
 		if(rvo != null) {
 			request.getSession().setAttribute("customerVO", rvo);
+			System.out.println("라이야 히~ 라이야 호~");
 			return "redirect:home.do";
 		}else {
+			System.out.println("라이야 히~ 라이야 오우호우~");
 			return "login_fail";
 		}
 	}
