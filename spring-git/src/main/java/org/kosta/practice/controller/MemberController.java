@@ -21,10 +21,47 @@ public class MemberController {
 		if(rvo != null) {
 			request.getSession().setAttribute("customerVO", rvo);
 			System.out.println("라이야 히~ 라이야 호~");
+			System.out.println("라이야 히~ 라이야 호~");
+			System.out.println("라이야 히~ 라이야 호~");
+			System.out.println("라이야 히~ 라이야 호~");
+			System.out.println("라이야 히~ 라이야 호~");
+			System.out.println("라이야 히~ 라이야 호~");
+			System.out.println("라이야 히~ 라이야 호~");
+			System.out.println("라이야 히~ 라이야 호~");
+			System.out.println("라이야 히~ 라이야 호~");
+			System.out.println("라이야 히~ 라이야 호~");
+			System.out.println("라이야 히~ 라이야 호~");
+			System.out.println("라이야 히~ 라이야 호~");
+			System.out.println("라이야 히~ 라이야 호~");
+			System.out.println("라이야 히~ 라이야 호~");
+			System.out.println("라이야 히~ 라이야 호~");
+			System.out.println("라이야 히~ 라이야 호~");
+			System.out.println("라이야 히~ 라이야 호~");
+			System.out.println("라이야 히~ 라이야 호~");System.out.println("라이야 히~ 라이야 호~");
+			System.out.println("라이야 히~ 라이야 호~");
+			System.out.println("라이야 히~ 라이야 호~");
+			System.out.println("라이야 히~ 라이야 호~");
+			System.out.println("라이야 히~ 라이야 호~");
+			System.out.println("라이야 히~ 라이야 호~");
+			System.out.println("라이야 히~ 라이야 호~");
+			System.out.println("라이야 히~ 라이야 호~");
+			System.out.println("라이야 히~ 라이야 호~");
+			System.out.println("라이야 히~ 라이야 호~");
+			System.out.println("라이야 히~ 라이야 호~");
 			return "redirect:home.do";
 		}else {
 			System.out.println("라이야 히~ 라이야 오우호우~");
 			return "login_fail";
 		}
+		
+		//ㄱSystem.out.println("라이야 히~ 라이야 호~");System.out.println("라이야 히~ 라이야 호~");
+		//System.out.println("라이야 히~ 라이야 호~");System.out.println("라이야 히~ 라이야 호~");
+		//System.out.println("라이야 히~ 라이야 호~");System.out.println("라이야 히~ 라이야 호~");
+		//System.out.println("라이야 히~ 라이야 호~");System.out.println("라이야 히~ 라이야 호~");System.out.println("라이야 히~ 라이야 호~");
+		//System.out.println("라이야 히~ 라이야 호~");System.out.println("라이야 히~ 라이야 호~");System.out.println("라이야 히~ 라이야 호~");
+		
+		}
+	public void manyForm(){
+		System.out.println("라이야 히~ 라이야 호~");
 	}
 }
